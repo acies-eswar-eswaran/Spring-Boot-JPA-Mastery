@@ -1,5 +1,8 @@
 package com.mycompany.property.management.controller;
 
+import com.mycompany.property.management.dto.calculatorDTO;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,5 +29,12 @@ public class CalculatorController {
                 Value = num1*num2;
      }
      return Value;
+    }
+    @PostMapping("/mul")
+    public ResponseEntity<Double> multiply(@RequestBody calculatorDTO calculatorDTO){
+        Double result = null;
+        result = calculatorDTO.getNumA() * calculatorDTO.getNumB() * calculatorDTO.getNumC() * calculatorDTO.getNumD();
+        ResponseEntity<Double> responseEntity = new ResponseEntity<Double>(result, HttpStatus.CREATED);
+            return responseEntity;
     }
 }
