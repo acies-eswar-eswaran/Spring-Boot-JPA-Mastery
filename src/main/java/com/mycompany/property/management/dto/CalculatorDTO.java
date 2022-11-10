@@ -2,7 +2,7 @@ package com.mycompany.property.management.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class calculatorDTO {
+public class CalculatorDTO {
 
     private Double numA;
     private Double numB;
