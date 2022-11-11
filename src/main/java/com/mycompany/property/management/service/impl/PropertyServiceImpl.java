@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class PropertyServiceImpl implements PropertyService {
     @Override
     public PropertyDTO saveProperty(PropertyDTO propertyDTO) {
+
         return null;
     }
 }
