@@ -1,5 +1,4 @@
 package com.mycompany.property.management.controller;
-
 import com.mycompany.property.management.dto.PropertyDTO;
 import com.mycompany.property.management.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
