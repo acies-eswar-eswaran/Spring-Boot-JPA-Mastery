@@ -2,6 +2,8 @@ package com.mycompany.property.management.controller;
 import com.mycompany.property.management.dto.PropertyDTO;
 import com.mycompany.property.management.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,9 +22,10 @@ public class propertyController {
     }
 
     @PostMapping("/properties")
-    public PropertyDTO saveProperty(@RequestBody PropertyDTO propertyDTO){
-       propertyService.saveProperty(propertyDTO);
-        System.out.println(propertyDTO);
-        return propertyDTO;
+    public ResponseEntity<PropertyDTO> saveProperty(@RequestBody PropertyDTO propertyDTO){
+
+        propertyDTO = propertyService.saveProperty(propertyDTO);
+        ResponseEntity<PropertyDTO> responseEntity = new ResponseEntity<>(propertyDTO, HttpStatus.CREATED);
+        return responseEntity;
     }
 }
